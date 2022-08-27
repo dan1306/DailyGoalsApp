@@ -1,0 +1,33 @@
+THis app is a goals app, where a user can list their goals to be
+completed for the day
+
+Trello Board:
+
+The Trello board of the Goals-App, mainly consist of an IcecBox
+which holds a list that might be done once the app is functioning.
+
+And an MVP which consist of must haves the app needs in order to be
+working properly.
+
+Wireframe:
+
+My Wireframe currently consist of the main page of the app. It has a
+nav which will include a link to return to home page, create goals, and
+sign out once logged in.
+
+It has a div where a users goals will be listed in cards.
+
+And Lastly a footer div.
+
+ERD:
+
+The ERD of this app consist of one main databse which holds the users 
+credentials where the password is hashed. There is only one user to every
+content wheras the content can be zero or many.
+
+That certain piece of content references a goals database. There can
+only be one piece of content wheras the goals it holds can either be zreo
+or many.
+
+The content also holds a sub-document. There can only be one content
+wheras the subdocuments can either be zero or many
