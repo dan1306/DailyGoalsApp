@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const checkInSchema = new Schema({
-    howIIsGoing: {
+    howItIsGoing: {
         type: String
     }
 },{
@@ -10,7 +10,7 @@ const checkInSchema = new Schema({
 })
 
 
-const newSchema = new Scheam({
+const newSchema = new Schema({
     title: {
         type: String
     },

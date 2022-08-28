@@ -1,0 +1,22 @@
+<%- include("../partials/header") -%>
+
+<h1>
+    Create A Goal Body
+</h1>
+
+<form action="/new" method="POST">
+    <div>
+        <label>
+            Goal Title: 
+        </label>
+        <input type="text" name="Title" required>
+        <br>
+        <br>
+        <button type="submit">
+            Add Body
+        </button>
+    </div>
+</form>
+
+
+<%- include("../partials/footer") -%>
