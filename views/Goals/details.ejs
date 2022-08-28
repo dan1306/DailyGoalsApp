@@ -1,0 +1,29 @@
+<%- include("../partials/header") -%>
+
+<h1>Add A Goal</h1>
+<ul>
+  <% details.goals.map((val)=>{ %>
+
+  <li><%= val.goal %></li>
+
+  <% }); %>
+</ul>
+
+<form action="/detail/<%= details._id %>/addGoal" method="POST">
+  <textarea name="goal"></textarea>
+  <button type="submit">Add</button>
+</form>
+
+<a href="/detail/<%= details._id %>/checkIn">Check In</a>
+
+
+<ul>
+    <% details.checkIn.map((val)=>{ %>
+
+        <li>
+            <%= val.howItIsGoing %>
+        </li>
+
+    <% }); %>
+</ul>
+<%- include("../partials/footer") -%>

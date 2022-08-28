@@ -1,7 +1,21 @@
 <%- include("../partials/header") -%>
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
 
-<a href="google.com">adsd</a>
+<p>Welcome to</p>
+
+<ol>
+    <% Goals.forEach((val)  => { %>
+
+        <li>
+            Title: <%= val.title %>
+            <br>
+            Created On: <%= val.createdAt %>
+            <br>
+            <a href="/detail/<%= val._id %>">Go To Goal</a>
+        </li>
+       
+    
+    <% }); %>    
+
+</ol>
 
 <%- include("../partials/footer") -%>

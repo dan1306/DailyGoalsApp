@@ -2,7 +2,10 @@
 
 <h1>How Are You Progressing/Feeling Towards The Goals You Have Set For Yourself</h1>
 
-<!-- <form action=""></form> -->
+<form action="/detail/<%= id %>/checkIn" method="POST">
+    <textarea name="howItIsGoing"></textarea>
+    <button type="submit">Submit</button>
+  </form>
 
 
 <%- include("../partials/footer") -%>
