@@ -14,4 +14,6 @@ router.delete("/:id/deleteGoal", detailsCtrl.deleteGoal)
 
 router.get('/:home/edit/:id', detailsCtrl.getEdit)
 
+router.put('/:home/edit/:id', detailsCtrl.saveEdit)
+
 module.exports = router

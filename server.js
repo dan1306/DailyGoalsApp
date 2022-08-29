@@ -15,6 +15,11 @@ var detailRouter = require("./routes/details");
 
 var app = express();
 
+const port = 4000
+
+app.use(express.static("public"));
+
+
 mongoose.connect("mongodb://127.0.0.1/dailyGoals");
 
 // view engine setup
@@ -26,7 +31,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride("_method"));
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -56,8 +62,8 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(4000, () => {
-  console.log(`Example app listening at http://localhost:${4000}`);
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
 });
 
 module.exports = app;

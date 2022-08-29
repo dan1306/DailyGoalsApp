@@ -7,7 +7,8 @@ module.exports = {
     getcheckIn,
     addCheckIn,
     deleteGoal,
-    getEdit
+    getEdit,
+    saveEdit
 }
 
 
@@ -81,6 +82,8 @@ async function deleteGoal(req, res) {
 
     goalBody = await goalBody.save()
 
+    await Goal.findByIdAndDelete(req.body.id)
+
     //  goalBody.goals.map(req.body.id)
 
     console.log("Daniel", goalBody.goals)
@@ -92,6 +95,31 @@ async function deleteGoal(req, res) {
 
 
 
-function getEdit(req, res) {
+async function getEdit(req, res) {
     console.log(req.params)
+    let home = req.params.home
+    let id = req.params.id
+
+    let goal = await Goal.findById(id)
+    console.log( "Goals: ", goal)
+    res.render("Goals/edit", {
+        home,
+        id,
+        goal
+    })
+}
+
+async function saveEdit(req, res) {
+
+    let home = req.params.home
+    let id = req.params.id
+    let edit = req.body.goalEdit
+
+    let goal = await Goal.findById(id)
+    goal.goal = edit
+    goal = await goal.save()
+
+    res.redirect("/detail/" + home)
+
+    
 }

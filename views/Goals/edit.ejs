@@ -1,0 +1,12 @@
+<%- include("../partials/header") -%>
+
+<h1>Edit Goal</h1>
+
+<form action="/detail/<%= home %>/edit/<%= id %>?_method=PUT" method="POST">
+  <textarea name="goalEdit">
+    <%= goal.goal %>
+  </textarea>
+  <button type="submit">Save</button>
+</form>
+
+<%- include("../partials/footer") -%>
