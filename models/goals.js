@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const goalSchema = new Schema({
     goal: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     completed: {
         type: Boolean,

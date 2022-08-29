@@ -11,6 +11,11 @@
             Created On: <%= val.createdAt %>
             <br>
             <a href="/detail/<%= val._id %>">Go To Goal</a>
+            <form action="/<%= val._id %>/delete?_method=DELETE" method="POST"> 
+                <button type="submit">Delete</button>
+            </form>
+
+
         </li>
        
     

@@ -5,7 +5,9 @@ module.exports = {
     getDetails,
     addGoal,
     getcheckIn,
-    addCheckIn
+    addCheckIn,
+    deleteGoal,
+    getEdit
 }
 
 
@@ -16,7 +18,8 @@ async function getDetails(req, res) {
     details = await details.populate('goals')
     console.log(details)
     res.render('Goals/details', {
-        details
+        details,
+        id
     })
 }
 
@@ -56,4 +59,39 @@ async function addCheckIn(req, res) {
 
     res.redirect("/detail/" + req.params.id)
 
+}
+
+async function deleteGoal(req, res) {
+
+    console.log(req.body)
+    
+    let goalBody = await GoalBody.findById(req.params.id)
+
+    // goalBody = await goalBody.populate('goals')
+
+    for (let i = 0; i < goalBody.goals.length; i++){
+
+        if (goalBody.goals[i]._id.toString() == req.body.id) {
+            console.log(goalBody.goals[i]._id.toString(), "hiiiii")
+            goalBody.goals.splice(i, 1)
+        }
+        
+        
+    }
+
+    goalBody = await goalBody.save()
+
+    //  goalBody.goals.map(req.body.id)
+
+    console.log("Daniel", goalBody.goals)
+
+    res.redirect('/detail/' + req.params.id)
+    
+
+}
+
+
+
+function getEdit(req, res) {
+    console.log(req.params)
 }

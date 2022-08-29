@@ -4,7 +4,23 @@
 <ul>
   <% details.goals.map((val)=>{ %>
 
-  <li><%= val.goal %></li>
+  <li><%= val.goal %> </li>
+ 
+  <br>
+  <form  action="/detail/<%= id %>/deleteGoal?_method=DELETE" method="POST">
+    <button>
+        <input type="text" name= id value="<%= val._id %>" hidden>
+        Delete Goal
+    </button>
+  </form>
+  <br>
+  <a href="/detail/<%= id %>/edit/<%= val._id %>/">Edit Goal</a>
+  <form action="">
+    <button>
+        Edit Goal
+    </button>
+  </form>
+  <br>
 
   <% }); %>
 </ul>

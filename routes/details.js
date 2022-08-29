@@ -10,4 +10,8 @@ router.get("/:id/checkIn", detailsCtrl.getcheckIn)
 
 router.post("/:id/checkIn", detailsCtrl.addCheckIn)
 
+router.delete("/:id/deleteGoal", detailsCtrl.deleteGoal)
+
+router.get('/:home/edit/:id', detailsCtrl.getEdit)
+
 module.exports = router

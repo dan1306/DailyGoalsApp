@@ -1,7 +1,8 @@
 const GoalBody = require("../models/new");
 
 module.exports = {
-  getGoals
+    getGoals,
+    deleteGoalBody,
 };
 
 async function getGoals(req, res) {
@@ -10,3 +11,15 @@ async function getGoals(req, res) {
 
   res.render("Goals/index", { Goals: goals });
 }
+
+
+async function deleteGoalBody (req, res) {
+    console.log(req.params.id )
+
+    await GoalBody.findByIdAndDelete({ _id: req.params.id })
+    
+    res.redirect("/")
+
+}
+
+
