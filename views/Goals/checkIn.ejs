@@ -1,7 +1,43 @@
 <%- include("../partials/header") -%>
 
-<div class="checkIn">
-  <h1 class="checkInTitle">How Are You Progressing/Feeling Towards The Goals You Have Set For Yourself:</h1>
+<div class="details">
+  <div class="detailsHeader">
+    <h1 class="detailsTitle"><%= details.title %></h1>
+    <h3><%= details.createdAt.toLocaleDateString() %></h3>
+  </div>
+
+ 
+  <div>
+    <h2>Check In: </h2>
+
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Update </th>
+      </tr>
+      <% details.checkIn.map((val)=>{ %>
+
+        <tr>
+          <td>
+            <%= val.createdAt.toLocaleDateString() %>
+          </td>
+          <td>
+            <%= val.createdAt.toLocaleTimeString() %>
+          </td>
+          <td>
+            <%= val.howItIsGoing %>
+          </td>
+        </tr>
+
+    <% }); %>
+    </table>
+
+  </div>
+<div class="updateDiv">
+
+
+<h1 class="checkInTitle">How Are You Progressing Towards The Goals You Set:</h1>
 
 <form action="/detail/<%= id %>/checkIn" method="POST">
     <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="howItIsGoing" ></textarea>
@@ -9,6 +45,12 @@
   </form>
 
 </div>
+
+<a href="/detail/<%= details._id %>">
+  <button type="button" class="btn btn-primary checkInPage">
+    Add A Goal
+  </button>
+</a>
 
 
 

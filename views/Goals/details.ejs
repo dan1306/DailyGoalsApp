@@ -26,7 +26,7 @@
  
   <br>
   <div class="btn-group detalisButtonDiv">
-    <a href="/detail/<%= id %>/edit/<%= val._id %>"> <button type="button" class="btn btn-primary detalisButton">Edit Goal</button> </a>
+    <a href="/detail/<%= id %>/edit/<%= val._id %>"> <button type="button" class="btn btn-info detalisButton">Edit Goal</button> </a>
 
     <form  action="/detail/<%= id %>/deleteGoal?_method=DELETE" method="POST">
       <input type="text" name= id value="<%= val._id %>" hidden>
@@ -42,6 +42,8 @@
   <% }); %>
 </ul>
 
+
+
 <form action="/detail/<%= details._id %>/addGoal" method="POST">
   <h1> Add A Goal: </h1>
   <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="goal" ></textarea>
@@ -52,20 +54,14 @@
 </button>
 </form>
 
-<a href="/detail/<%= details._id %>/checkIn">Check In</a>
+<a href="/detail/<%= details._id %>/checkIn">
+  <button type="button" class="btn btn-primary detailsPage">
+    Check In
+  </button>
+</a>
 
 
-<ul>
-    <% details.checkIn.map((val)=>{ %>
 
-        <li>
-            <%= val.howItIsGoing %>
-        </li>
-
-    <% }); %>
-</ul>
-
-</div>
 
 
 <%- include("../partials/footer") -%>

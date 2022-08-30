@@ -161,3 +161,33 @@ text-align: center;
 .checkBox{
   margin-right: 10px;
 }
+
+.detailsPage, .checkInPage{
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  margin-top: 30px;
+}
+
+table, td, th{
+  border: 3px dotted;
+
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #21E1E1;
+}
+tr:nth-child(odd) {
+  background-color: #B9FFF8;
+}
+
+.updateDiv{
+  margin-top: 45px;
+}

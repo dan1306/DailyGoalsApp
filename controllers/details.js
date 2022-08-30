@@ -46,9 +46,14 @@ async function addGoal(req, res) {
 
 
 async function getcheckIn(req, res) {
+
+    let details = await GoalBody.findById(req.params.id)
+
+
     
     res.render('Goals/checkIn', {
-        id: req.params.id
+        id: req.params.id,
+        details
     })
 }
 
@@ -59,7 +64,7 @@ async function addCheckIn(req, res) {
     goal.checkIn.push(req.body)
     goal = await goal.save()
 
-    res.redirect("/detail/" + req.params.id)
+    res.redirect("/detail/" + req.params.id + "/checkIn")
 
 }
 
