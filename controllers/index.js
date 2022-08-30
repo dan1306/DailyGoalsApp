@@ -7,7 +7,7 @@ module.exports = {
 
 async function getGoals(req, res) {
   let goals = await GoalBody.find({});
-  console.log(goals);
+  console.log(goals, req.user);
 
   // for (let i = 0; i < goals.length)
   // goals.map((val) => {
@@ -16,7 +16,10 @@ async function getGoals(req, res) {
 
   // console.log(goals)
 
-  res.render("Goals/index", { Goals: goals });
+  res.render("Goals/index", {
+    Goals: goals,
+    user: req.user
+  });
 }
 
 

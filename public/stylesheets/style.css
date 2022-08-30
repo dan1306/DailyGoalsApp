@@ -25,25 +25,32 @@ nav{
 
 .new-link{
   font-size:25px;
+  position: relative;
+  left: 50px;
+
 }
 
-.new-link, .home-link{
+.logIn-SignUp{
+  font-size:25px;
+  padding-left: 25px;
+  position: relative;
+  left: 75px;
+
+}
+
+.new-link, .home-link, .logIn-SignUp{
   position: relative;
   top: 15px;
   font-family: 'Exo', sans-serif;
 
 }
 
-.new-link a, .home-link a{
+.new-link a, .home-link a, .logIn-SignUp a{
   text-decoration:none ;
   color: #FFFFFF;
 }
 
-.new-link a:hover{
-  color: #CFD2CF;
-}
-
-.home-link a:hover{
+.new-link a:hover, .logIn-SignUp a:hover, .home-link a:hover{
   color: #CFD2CF;
 }
 

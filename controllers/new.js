@@ -9,7 +9,8 @@ async function addNewGoalBody(req, res) {
 
     let goalBody = new GoalBody()
 
-    goalBody.title = req.body.title
+  goalBody.title = req.body.title
+  goalBody.userId = req.user.googleId
 
     goalBody = await goalBody.save()
 

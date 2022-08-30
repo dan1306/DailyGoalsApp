@@ -19,6 +19,7 @@ const newSchema = new Schema({
         ref: 'Goal'
     }],
     checkIn: [checkInSchema],
+    userId: String
 
 },{
     timestamps: true

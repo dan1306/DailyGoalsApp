@@ -2,10 +2,26 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
+var session = require('express-session');
+var passport = require('passport');
 var logger = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+
+// load the env vars
+require('dotenv').config();
+
+var app = express();
+
+const port = 4000
+
+// connect to the MongoDB with mongoose
+require('./config/database');
+// connect to passport module
+require("./config/passport");
+
+
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -13,9 +29,7 @@ var newRouter = require("./routes/new");
 var checkInRouter = require("./routes/checkIn");
 var detailRouter = require("./routes/details");
 
-var app = express();
 
-const port = 4000
 
 app.use(express.static("public"));
 
@@ -30,6 +44,13 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'Daily Goals App',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(methodOverride("_method"));
 // app.use(express.static(path.join(__dirname, 'public')));
 

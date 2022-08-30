@@ -4,7 +4,9 @@ var newCtrl = require('../controllers/new');
 
 
 router.get("/", (req, res) => {
-    res.render("Goals/new")
+    res.render("Goals/new", {
+        user: req.user
+    })
 })
 
 router.post('/', newCtrl.addNewGoalBody)
