@@ -16,4 +16,6 @@ router.get('/:home/edit/:id', detailsCtrl.getEdit)
 
 router.put('/:home/edit/:id', detailsCtrl.saveEdit)
 
+router.put('/:id/check/:goalId', detailsCtrl.editCheck)
+
 module.exports = router

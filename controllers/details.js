@@ -8,7 +8,8 @@ module.exports = {
     addCheckIn,
     deleteGoal,
     getEdit,
-    saveEdit
+    saveEdit,
+    editCheck
 }
 
 
@@ -117,9 +118,33 @@ async function saveEdit(req, res) {
 
     let goal = await Goal.findById(id)
     goal.goal = edit
+    goal.completed = false
     goal = await goal.save()
 
     res.redirect("/detail/" + home)
 
+    
+}
+
+async function editCheck(req, res) {
+
+    console.log(req.params.goalId)
+
+    console.log("DANIEL", req.body.check)
+
+
+    let goal = await Goal.findById(req.params.goalId)
+    console.log("BEFORE", goal.completed)
+
+    if (goal.completed == true) {
+        goal.completed = false
+    } else if(goal.completed == false){
+        goal.completed = true 
+    }
+
+    goal = await goal.save()
+
+    console.log("aFTER", goal)
+    res.redirect('/detail/' + req.params.id)
     
 }

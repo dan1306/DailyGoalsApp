@@ -136,3 +136,28 @@ text-align: center;
   font-weight: 600;
   font-size: 50px;
 }
+
+ .detalisButton{
+
+  margin-left: 20px;
+
+}
+
+.detalisButtonDiv{
+  margin-bottom: 25px;
+}
+
+.detailsList{
+   list-style-type: none;
+   font-size:x-large
+}
+
+.checkBoxDiv{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.checkBox{
+  margin-right: 10px;
+}
