@@ -14,14 +14,19 @@ module.exports = {
 
 
 async function getDetails(req, res) {
+
     let id = req.params.id
 
-    let details = await GoalBody.findById(id)
+    console.log(req.user)
+
+    let details = await GoalBody.findOne({ userId: req.user.googleId })
     details = await details.populate('goals')
     console.log(details)
+
     res.render('Goals/details', {
         details,
-        id
+        id,
+        user: req.user
     })
 }
 
@@ -53,7 +58,8 @@ async function getcheckIn(req, res) {
     
     res.render('Goals/checkIn', {
         id: req.params.id,
-        details
+        details,
+        user: req.user
     })
 }
 
@@ -102,16 +108,21 @@ async function deleteGoal(req, res) {
 
 
 async function getEdit(req, res) {
+
     console.log(req.params)
     let home = req.params.home
     let id = req.params.id
 
+    
+    let detail = await GoalBody.findById(req.params.home)
     let goal = await Goal.findById(id)
     console.log( "Goals: ", goal)
     res.render("Goals/edit", {
         home,
         id,
-        goal
+        goal,
+        detail,
+        user: req.user
     })
 }
 

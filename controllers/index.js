@@ -6,20 +6,21 @@ module.exports = {
 };
 
 async function getGoals(req, res) {
-  let goals = await GoalBody.find({});
-  console.log(goals, req.user);
+  if (req.user) {
+    let goals = await GoalBody.find({ userId :req.user.googleId});
+    console.log(goals, req.user);
+  
+    res.render("Goals/index", {
+      Goals: goals,
+      user: req.user
+    });
+  } else {
+    res.render("Goals/index", {
+      Goals: [],
+      user: req.user
+    });
+  }
 
-  // for (let i = 0; i < goals.length)
-  // goals.map((val) => {
-  //   await val.populate("goals")
-  // })
-
-  // console.log(goals)
-
-  res.render("Goals/index", {
-    Goals: goals,
-    user: req.user
-  });
 }
 
 

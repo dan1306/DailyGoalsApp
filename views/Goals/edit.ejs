@@ -1,12 +1,23 @@
 <%- include("../partials/header") -%>
 
-<h1>Edit Goal</h1>
+<div class="editDiv">
+  <div class="detailsHeader">
+    <h1 class="detailsTitle"><%= detail.title %></h1>
+    <h3><%= detail.createdAt.toLocaleDateString() %></h3>
+  </div>
+  <h2>Edit Goal:</h2>
 
 <form action="/detail/<%= home %>/edit/<%= id %>?_method=PUT" method="POST">
-  <textarea name="goalEdit">
+  <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="goalEdit" >
     <%= goal.goal %>
   </textarea>
-  <button type="submit">Save</button>
+  <button class="btn btn-primary btn-success" type="submit">
+    Save
+</button>
 </form>
+
+</div>
+
+
 
 <%- include("../partials/footer") -%>

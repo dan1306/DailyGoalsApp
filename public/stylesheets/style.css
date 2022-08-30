@@ -198,3 +198,19 @@ tr:nth-child(odd) {
 .updateDiv{
   margin-top: 45px;
 }
+
+.editDiv{
+  padding: 100px;
+}
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #96E5D1;
+  color: white;
+  text-align: center;
+  height: 35px;
+  border-top: 2px solid black;
+}
