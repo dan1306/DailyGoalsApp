@@ -30,6 +30,8 @@ nav{
 .new-link, .home-link{
   position: relative;
   top: 15px;
+  font-family: 'Exo', sans-serif;
+
 }
 
 .new-link a, .home-link a{
@@ -43,4 +45,94 @@ nav{
 
 .home-link a:hover{
   color: #CFD2CF;
+}
+
+.goal-field{
+  padding: 50px 0 50px 250px;
+}
+
+.goal-body{
+  border-radius: 25px;
+  border: 5px solid #73AD21;
+  margin: 5px 5px 30px 5px;
+}
+
+.goal-title{
+  text-align: center;
+  position: relative;
+  top: 13px;
+}
+
+.goal-delete {
+  position: relative;
+  left: 110px;
+  margin-bottom: 30px;
+}
+
+.goal-details{
+  position: relative;
+  left: 104px;
+  margin-bottom: 30px;
+}
+
+.goal-buttons{
+display: block;
+text-align: center;
+  
+}
+
+.goal-innerButtons{
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+#Title{
+  width: auto;
+}
+
+#Date{
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.newGoal, .checkIn, .details{
+  padding: 50px;
+}
+
+.newGoalTitle, .checkInTitle{
+  margin-bottom: 20px;
+  font-weight: 500
+}
+
+.checkInTxt{
+  margin-bottom: 20px;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .goal-field{
+    padding: 100px;
+  }
+  .goal-body{
+    width: 10px;
+  }
+}
+
+/* @media only screen and (max-width: 960px) {
+  .goal-field{
+    padding: 100px 100px 100px 325px;
+  }
+  .goal-body{
+    width: 10px;
+  }
+} */
+
+.detailsHeader{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.detailsTitle{
+  font-weight: 600;
+  font-size: 50px;
 }

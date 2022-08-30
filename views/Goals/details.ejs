@@ -1,33 +1,41 @@
 <%- include("../partials/header") -%>
 
-<h1>Add A Goal</h1>
+<div class="details">
+  <div class="detailsHeader">
+    <h1 class="detailsTitle"><%= details.title %></h1>
+    <h3><%= details.createdAt.toLocaleDateString() %></h3>
+  </div>
+  
 <ul>
   <% details.goals.map((val)=>{ %>
 
   <li><%= val.goal %> </li>
  
   <br>
-  <form  action="/detail/<%= id %>/deleteGoal?_method=DELETE" method="POST">
-    <button>
-        <input type="text" name= id value="<%= val._id %>" hidden>
-        Delete Goal
-    </button>
-  </form>
-  <br>
-  <a href="/detail/<%= id %>/edit/<%= val._id %>">Edit Goal</a>
-  <form action="">
-    <button>
-        Edit Goal
-    </button>
-  </form>
+  <div>
+    <a href="/detail/<%= id %>/edit/<%= val._id %>"> <button type="button" class="btn btn-primary">Edit Goal</button> </a>
+    <form  action="/detail/<%= id %>/deleteGoal?_method=DELETE" method="POST">
+      <button type="button" class="btn btn-danger">
+          <input type="text" name= id value="<%= val._id %>" hidden>
+          Delete Goal
+      </button>
+    </form>
+  </div>
+
+ 
   <br>
 
   <% }); %>
 </ul>
 
 <form action="/detail/<%= details._id %>/addGoal" method="POST">
-  <textarea name="goal"></textarea>
-  <button type="submit">Add</button>
+  <h1> Add A Goal: </h1>
+  <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="goal" ></textarea>
+
+
+  <button class="btn btn-primary btn-success" type="submit">
+    Add
+</button>
 </form>
 
 <a href="/detail/<%= details._id %>/checkIn">Check In</a>
@@ -42,4 +50,8 @@
 
     <% }); %>
 </ul>
+
+</div>
+
+
 <%- include("../partials/footer") -%>

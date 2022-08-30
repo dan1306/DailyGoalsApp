@@ -1,11 +1,16 @@
 <%- include("../partials/header") -%>
 
-<h1>How Are You Progressing/Feeling Towards The Goals You Have Set For Yourself</h1>
+<div class="checkIn">
+  <h1 class="checkInTitle">How Are You Progressing/Feeling Towards The Goals You Have Set For Yourself:</h1>
 
 <form action="/detail/<%= id %>/checkIn" method="POST">
-    <textarea name="howItIsGoing"></textarea>
-    <button type="submit">Submit</button>
+    <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="howItIsGoing" ></textarea>
+    <button type="submit" class="btn btn-primary btn-success">Submit</button>
   </form>
+
+</div>
+
+
 
 
 <%- include("../partials/footer") -%>

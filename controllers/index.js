@@ -9,6 +9,13 @@ async function getGoals(req, res) {
   let goals = await GoalBody.find({});
   console.log(goals);
 
+  // for (let i = 0; i < goals.length)
+  // goals.map((val) => {
+  //   await val.populate("goals")
+  // })
+
+  // console.log(goals)
+
   res.render("Goals/index", { Goals: goals });
 }
 
