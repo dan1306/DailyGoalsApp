@@ -1,61 +1,39 @@
 <%- include("../partials/header") -%>
 
-
-<!-- <ol>
-    <% Goals.forEach((val)  => { %>
-
-        <li>
-            Title: <%= val.title %>
-            <br>
-            Created On: <%= val.createdAt %>
-            <br>
-            <a href="/detail/<%= val._id %>">Go To Goal</a>
-            <form action="/<%= val._id %>/delete?_method=DELETE" method="POST"> 
-                <button type="submit">Delete</button>
-            </form>
-
-
-        </li>
-       
+<% if (user) { %>
     
-    <% }); %>    
-
-</ol> -->
-
 <div class="row goal-field">
-
-    <% Goals.forEach((val)  => { %>
-    <div class="col-lg-3 col-md-6 col-sm-6 goal-body">
-
-        <div id="Title">
-            <h4 class="goal-title"> 
-                Title: <%= val.title %>
-            </h4>
-            <hr>
-        </div>
-
-        <div id="Date">
-            <h4 class="goal-title"> 
-                Created On: <%= val.createdAt.toLocaleDateString() %>
-            </h4>
-            <hr>
-        </div>
-
-        
-
-        <div class="goal-buttons">
-            <a href="/detail/<%= val._id %>">
-                <button type="button" class="btn btn-primary goal-innerButtons">Details</button>
-            </a>
-            <form action="/<%= val._id %>/delete?_method=DELETE" method="POST" > 
-                <button type="submit" class="btn btn-danger goal-innerButtons" >Delete</button>
-            </form>
-        </div>
-  
+  <% Goals.forEach((val) => { %>
+  <div class="col-lg-3 col-md-6 col-sm-6 goal-body">
+    <div id="Title">
+      <h4 class="goal-title">Title: <%= val.title %></h4>
+      <hr />
     </div>
 
-    <% }); %>    
+    <div id="Date">
+      <h4 class="goal-title">
+        Created On: <%= val.createdAt.toLocaleDateString() %>
+      </h4>
+      <hr />
+    </div>
 
+    <div class="goal-buttons">
+      <a href="/detail/<%= val._id %>">
+        <button type="button" class="btn btn-primary goal-innerButtons">
+          Details
+        </button>
+      </a>
+      <form action="/<%= val._id %>/delete?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-danger goal-innerButtons">
+          Delete
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <% }); %>
 </div>
+
+<% } %>
 
 <%- include("../partials/footer") -%>

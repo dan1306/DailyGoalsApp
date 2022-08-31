@@ -1,18 +1,19 @@
 const GoalBody = require("../models/new");
 
 module.exports = {
-    addNewGoalBody
-  };
+  addNewGoalBody,
+};
 
 async function addNewGoalBody(req, res) {
-    console.log(req.body)
+  console.log(req.body);
 
-    let goalBody = new GoalBody()
+  let goalBody = new GoalBody();
 
-  goalBody.title = req.body.title
-  goalBody.userId = req.user.googleId
+  goalBody.title = req.body.title;
+  goalBody.userId = req.user.googleId;
+  goalBody.email = req.user.email;
 
-    goalBody = await goalBody.save()
+  goalBody = await goalBody.save();
 
-    res.redirect("/")
+  res.redirect("/");
 }

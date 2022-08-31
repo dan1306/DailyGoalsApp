@@ -1,9 +1,12 @@
 <%- include("../partials/header") -%>
 
+<% if (user) { %>
+
 <div class="details">
   <div class="detailsHeader">
     <h1 class="detailsTitle"><%= details.title %></h1>
     <h3><%= details.createdAt.toLocaleDateString() %></h3>
+    <h5><%= details.email %></h2>
   </div>
 
  
@@ -40,19 +43,21 @@
 <h1 class="checkInTitle">How Are You Progressing Towards The Goals You Set:</h1>
 
 <form action="/detail/<%= id %>/checkIn" method="POST">
-    <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="howItIsGoing" ></textarea>
+    <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="howItIsGoing" required></textarea>
     <button type="submit" class="btn btn-primary btn-success">Submit</button>
+    <a href="/detail/<%= details._id %>">
+      <button type="button" class="btn btn-primary addAgoalBtn">
+        Add A Goal
+      </button>
+    </a>
+    
   </form>
+
 
 </div>
 
-<a href="/detail/<%= details._id %>">
-  <button type="button" class="btn btn-primary checkInPage">
-    Add A Goal
-  </button>
-</a>
 
-
+<% } %>
 
 
 <%- include("../partials/footer") -%>

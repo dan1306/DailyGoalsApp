@@ -1,6 +1,7 @@
 body {
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 
@@ -51,17 +52,24 @@ nav{
 }
 
 .new-link a:hover, .logIn-SignUp a:hover, .home-link a:hover{
-  color: #CFD2CF;
+  color: #C1EFFF;
 }
 
 .goal-field{
   padding: 50px 0 50px 250px;
 }
 
-.goal-body{
+.goal-body:nth-child(odd){
   border-radius: 25px;
-  border: 5px solid #73AD21;
+  border: 5px dotted #7FBCD2;
   margin: 5px 5px 30px 5px;
+  background-color: #6FEDD6;
+}
+.goal-body:nth-child(even){
+  border-radius: 25px;
+  border: 5px solid #21E1E1;
+  margin: 5px 5px 30px 5px;
+  background-color: #B9FFF8;
 }
 
 .goal-title{
@@ -113,6 +121,7 @@ text-align: center;
 
 .checkInTxt{
   margin-bottom: 20px;
+
 
 }
 
@@ -212,5 +221,25 @@ footer{
   color: white;
   text-align: center;
   height: 35px;
-  border-top: 2px solid black;
+  border-top: 3px solid black;
+}
+
+.goal-list:nth-child(even){
+  border: 5px dotted #7FBCD2;
+  background-color: #6FEDD6;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.goal-list:nth-child(odd){
+  border: 5px solid #21E1E1;
+  background-color: #B9FFF8;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.checkInBttn, .addAgoalBtn{
+  margin-left: 10px;
 }
