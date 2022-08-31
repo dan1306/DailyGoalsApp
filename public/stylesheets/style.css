@@ -1,81 +1,125 @@
 body {
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
 }
 
-
-nav{
-  background-color: #6FEDD6;
-  margin: 0;
-  border-bottom: 3px solid black;
-  padding: 30px 60px;
-  
-}
-
-.brand-name{
-  font-family :'Fredoka One', cursive;
+.brand-name {
+  font-family: "Fredoka One", cursive;
   font-size: 60px;
 }
 
-.home-link{
-  font-size:25px;
-  text-align: right;
-  padding-right: 20px;
+.checkInBttn,
+.addAgoalBtn {
+  margin-left: 10px;
 }
 
-.new-link{
-  font-size:25px;
-  position: relative;
-  left: 50px;
-
+.checkBoxDiv {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
 }
 
-.logIn-SignUp{
-  font-size:25px;
-  padding-left: 25px;
-  position: relative;
-  left: 75px;
-
+.checkBox {
+  margin-right: 10px;
 }
 
-.new-link, .home-link, .logIn-SignUp{
-  position: relative;
-  top: 15px;
-  font-family: 'Exo', sans-serif;
-
+.checkInTxt {
+  margin-bottom: 20px;
 }
 
-.new-link a, .home-link a, .logIn-SignUp a{
-  text-decoration:none ;
-  color: #FFFFFF;
+#Date {
+  width: auto;
+  margin-bottom: 20px;
 }
 
-.new-link a:hover, .logIn-SignUp a:hover, .home-link a:hover{
-  color: #C1EFFF;
+.detailsHeader {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.goal-field{
+.detailsTitle {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+.detalisButton {
+  margin-left: 20px;
+}
+
+.detalisButtonDiv {
+  margin-bottom: 25px;
+}
+
+.detailsList {
+  list-style-type: none;
+  font-size: x-large;
+}
+
+.detailsPage,
+.checkInPage {
+  margin-top: 10px;
+}
+
+.editDiv {
+  padding: 100px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #96e5d1;
+  color: white;
+  text-align: center;
+  height: 35px;
+  border-top: 3px solid black;
+}
+
+.goal-list:nth-child(even) {
+  border: 5px dotted #7fbcd2;
+  background-color: #6fedd6;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.goal-list:nth-child(odd) {
+  border: 5px solid #21e1e1;
+  background-color: #b9fff8;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.goal-field {
   padding: 50px 0 50px 250px;
 }
 
-.goal-body:nth-child(odd){
+.goal-body:nth-child(odd) {
   border-radius: 25px;
-  border: 5px dotted #7FBCD2;
+  border: 5px dotted #7fbcd2;
   margin: 5px 5px 30px 5px;
-  background-color: #6FEDD6;
-}
-.goal-body:nth-child(even){
-  border-radius: 25px;
-  border: 5px solid #21E1E1;
-  margin: 5px 5px 30px 5px;
-  background-color: #B9FFF8;
+  background-color: #6fedd6;
 }
 
-.goal-title, .goal-date{
+.goal-body:nth-child(even) {
+  border-radius: 25px;
+  border: 5px solid #21e1e1;
+  margin: 5px 5px 30px 5px;
+  background-color: #b9fff8;
+}
+
+.goal-title,
+.goal-date {
   text-align: center;
   position: relative;
   top: 13px;
+}
+
+.goal-buttons {
+  display: block;
+  text-align: center;
 }
 
 .goal-delete {
@@ -84,102 +128,78 @@ nav{
   margin-bottom: 30px;
 }
 
-.goal-details{
+.goal-details {
   position: relative;
   left: 104px;
   margin-bottom: 30px;
 }
 
-.goal-buttons{
-display: block;
-text-align: center;
-  
-}
-
-.goal-innerButtons{
+.goal-innerButtons {
   width: 150px;
   margin-bottom: 10px;
 }
 
-#Title{
-  width: auto;
+.home-link {
+  font-size: 25px;
+  text-align: right;
+  padding-right: 20px;
 }
 
-#Date{
-  width: auto;
-  margin-bottom: 20px;
+.logIn-SignUp {
+  font-size: 25px;
+  padding-left: 25px;
+  position: relative;
+  left: 75px;
 }
 
-.newGoal, .checkIn, .details{
+nav {
+  background-color: #6fedd6;
+  margin: 0;
+  border-bottom: 3px solid black;
+  padding: 30px 60px;
+}
+
+.newGoal,
+.checkIn,
+.details {
   padding: 50px;
 }
 
-.newGoalTitle, .checkInTitle{
+.newGoalTitle,
+.checkInTitle {
   margin-bottom: 20px;
-  font-weight: 500
+  font-weight: 500;
 }
 
-.checkInTxt{
-  margin-bottom: 20px;
-
-
+.new-link {
+  font-size: 25px;
+  position: relative;
+  left: 50px;
 }
 
-@media only screen and (max-width: 600px) {
-  .goal-field{
-    padding: 100px;
-  }
-  .goal-body{
-    width: 10px;
-  }
+.new-link,
+.home-link,
+.logIn-SignUp {
+  position: relative;
+  top: 15px;
+  font-family: "Exo", sans-serif;
 }
 
-/* @media only screen and (max-width: 960px) {
-  .goal-field{
-    padding: 100px 100px 100px 325px;
-  }
-  .goal-body{
-    width: 10px;
-  }
-} */
-
-.detailsHeader{
-  text-align: center;
-  margin-bottom: 30px;
+.new-link a,
+.home-link a,
+.logIn-SignUp a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
-.detailsTitle{
-  font-weight: 600;
-  font-size: 50px;
+.new-link a:hover,
+.logIn-SignUp a:hover,
+.home-link a:hover {
+  color: #c1efff;
 }
 
- .detalisButton{
-
-  margin-left: 20px;
-
-}
-
-.detalisButtonDiv{
-  margin-bottom: 25px;
-}
-
-.detailsList{
-   list-style-type: none;
-   font-size:x-large
-}
-
-.checkBoxDiv{
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.checkBox{
-  margin-right: 10px;
-}
-
-.detailsPage, .checkInPage{
-  margin-top: 10px;
+#Title {
+  width: auto;
 }
 
 table {
@@ -187,59 +207,35 @@ table {
   margin-top: 30px;
 }
 
-table, td, th{
+table,
+td,
+th {
   border: 3px dotted;
-
 }
 
-td, th {
+td,
+th {
   text-align: left;
   padding: 10px;
 }
 
 tr:nth-child(even) {
-  background-color: #21E1E1;
-}
-tr:nth-child(odd) {
-  background-color: #B9FFF8;
+  background-color: #21e1e1;
 }
 
-.updateDiv{
+tr:nth-child(odd) {
+  background-color: #b9fff8;
+}
+
+.updateDiv {
   margin-top: 45px;
 }
 
-.editDiv{
-  padding: 100px;
-}
-
-footer{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #96E5D1;
-  color: white;
-  text-align: center;
-  height: 35px;
-  border-top: 3px solid black;
-}
-
-.goal-list:nth-child(even){
-  border: 5px dotted #7FBCD2;
-  background-color: #6FEDD6;
-  padding: 20px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-.goal-list:nth-child(odd){
-  border: 5px solid #21E1E1;
-  background-color: #B9FFF8;
-  padding: 20px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-.checkInBttn, .addAgoalBtn{
-  margin-left: 10px;
+@media only screen and (max-width: 600px) {
+  .goal-field {
+    padding: 100px;
+  }
+  .goal-body {
+    width: 10px;
+  }
 }
