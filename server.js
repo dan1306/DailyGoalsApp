@@ -21,18 +21,13 @@ require('./config/database');
 // connect to passport module
 require("./config/passport");
 
-
-
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var newRouter = require("./routes/new");
 var checkInRouter = require("./routes/checkIn");
 var detailRouter = require("./routes/details");
 
-
-
 app.use(express.static("public"));
-
 
 mongoose.connect("mongodb://127.0.0.1/dailyGoals");
 
@@ -52,15 +47,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
-// app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
-// app.use(express.static("public"));
 
+// Routers
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/new", newRouter);
@@ -83,6 +76,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
+// Listening Port
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

@@ -1,4 +1,5 @@
 const GoalBody = require("../models/new");
+const Goal = require("../models/goals");
 
 module.exports = {
   getGoals,
@@ -8,8 +9,6 @@ module.exports = {
 async function getGoals(req, res) {
   if (req.user) {
     let goals = await GoalBody.find({ userId: req.user.googleId });
-    console.log(req.user, goals);
-
     res.render("Goals/index", {
       Goals: goals,
       user: req.user,
@@ -23,7 +22,11 @@ async function getGoals(req, res) {
 }
 
 async function deleteGoalBody(req, res) {
-  console.log(req.params.id);
+  let goalsToBeDeleted = await Goal.find({ identify: req.params.id });
+
+  if (goalsToBeDeleted) {
+    await Goal.deleteMany({ identify: req.params.id });
+  }
 
   await GoalBody.findByIdAndDelete({ _id: req.params.id });
 
