@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Goals App</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -19,52 +19,38 @@
   </head>
   <body>
     <% if (user) { %>
-    <nav class="row">
-      <div class="col-4">
-        <!-- <a class="col-4" href="#">Daily Goals</a> -->
-        <h1 class="brand-name">Daily Goals</h1>
-      </div>
-      <div class="col-2 links">
-        <!-- <a class="nav-link home-link" href="/"><p>Home</p> </a> -->
-        <!-- Add login UI here -->
-      </div>
-      <div class="col-6 row">
-        <!-- <a class="nav-link new-link" href="/new"> <p>New Goal Schema</p> </a> -->
-        <div class="col-3">
-          <p class="home-link"><a href="/">Home</a></p>
+      <nav class="row">
+        <div class="col-4">
+          <h1 class="brand-name">Daily Goals</h1>
         </div>
-        <div class="col-3">
-          <p class="new-link"><a href="/new">Create Goal</a></p>
+        <div class="col-2"></div>
+        <div class="col-6 row">
+          <div class="col-3">
+            <p class="home-link"><a href="/">Home</a></p>
+          </div>
+          <div class="col-3">
+            <p class="new-link"><a href="/new">Create Goal</a></p>
+          </div>
+          <div class="col-3">
+            <p class="logIn-SignUp"><a href="/logout">Log Out</a></p>
+          </div>
         </div>
-        <div class="col-3">
-          <% if (user) { %>
-          <p class="logIn-SignUp"><a href="/logout">Log Out</a></p>
-          <% } else { %>
-          <p class="logIn-SignUp"><a href="/auth/google"> LogIn</a></p>
-          <% } %>
-        </div>
-      </div>
-    </nav>
+      </nav>
 
     <% } else { %>
-    <nav class="row">
-      <div class="col-4">
-        <!-- <a class="col-4" href="#">Daily Goals</a> -->
-        <h1 class="brand-name">Daily Goals</h1>
-      </div>
-      <div class="col-2 links">
-        <!-- <a class="nav-link home-link" href="/"><p>Home</p> </a> -->
-        <!-- Add login UI here -->
-      </div>
-      <div class="col-6 row">
-        <!-- <a class="nav-link new-link" href="/new"> <p>New Goal Schema</p> </a> -->
-        <div class="col-3"></div>
-        <div class="col-3">
-          <p class="logIn-SignUp"><a href="/auth/google"> LogIn</a></p>
+      <nav class="row">
+        <div class="col-4">
+          <h1 class="brand-name">Daily Goals</h1>
         </div>
-        <div class="col-3"></div>
-      </div>
-    </nav>
+        <div class="col-2"></div>
+        <div class="col-6 row">
+          <div class="col-3"></div>
+          <div class="col-3">
+            <p class="logIn-SignUp"><a href="/auth/google">LogIn</a></p>
+          </div>
+          <div class="col-3"></div>
+        </div>
+      </nav>
 
     <% } %>
   </body>

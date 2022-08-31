@@ -1,27 +1,18 @@
-<%- include("../partials/header") -%>
-
+<%- include("../partials/header") -%> 
 <% if (user) { %>
 
 <div class="newGoal">
-    <h1 class="newGoalTitle">
-        Goal Title: 
-   </h1>
-   
-   <form action="/new" method="POST">
-       <div>
-      
-           <input type="text" name="title" class="form-control" required>
-           <br>
-           <br>
-           <button class="btn btn-primary btn-success" type="submit">
-               Create
-           </button>
-       </div>
-   </form>
-   
+  <h1 class="newGoalTitle">Goal Title:</h1>
 
+  <form action="/new" method="POST">
+    <div>
+      <input type="text" name="title" class="form-control" required />
+      <br />
+      <br />
+      <button class="btn btn-primary btn-success" type="submit">Create</button>
+    </div>
+  </form>
 </div>
 
-<% } %>
-
+<% } %> 
 <%- include("../partials/footer") -%>

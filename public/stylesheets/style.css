@@ -72,7 +72,7 @@ nav{
   background-color: #B9FFF8;
 }
 
-.goal-title{
+.goal-title, .goal-date{
   text-align: center;
   position: relative;
   top: 13px;

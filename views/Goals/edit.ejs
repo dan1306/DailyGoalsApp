@@ -1,26 +1,25 @@
 <%- include("../partials/header") -%>
-
 <% if (user) { %>
-  
-  <div class="editDiv">
-    <div class="detailsHeader">
-      <h1 class="detailsTitle"><%= detail.title %></h1>
-      <h3><%= detail.createdAt.toLocaleDateString() %></h3>
-      <h5><%= detail.email %></h2>
-    </div>
-    <h2>Edit Goal:</h2>
+
+<div class="editDiv">
+  <div class="detailsHeader">
+    <h1 class="detailsTitle"><%= detail.title %></h1>
+    <h3><%= detail.createdAt.toLocaleDateString() %></h3>
+    <h5><%= detail.email %></h2>
+  </div>
+
 
   <form action="/detail/<%= home %>/edit/<%= id %>?_method=PUT" method="POST">
+    <h2>Edit Goal:</h2>
     <textarea rows="5" cols="50" type="text" class="form-control checkInTxt" name="goalEdit" required>
       <%= goal.goal %>
     </textarea>
     <button class="btn btn-primary btn-success" type="submit">
       Save
-  </button>
+    </button>
   </form>
 
-  </div>
+</div>
 
 <% } %>
-
 <%- include("../partials/footer") -%>

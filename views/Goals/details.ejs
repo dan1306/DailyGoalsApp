@@ -1,82 +1,59 @@
 <%- include("../partials/header") -%>
-
 <% if (user) { %>
 
 <div class="details">
+
   <div class="detailsHeader">
     <h1 class="detailsTitle"><%= details.title %></h1>
     <h3><%= details.createdAt.toLocaleDateString() %></h3>
     <h5><%= details.email %></h2>
   </div>
 
+  <ul>
+    <% details.goals.map((val)=>{ %>
+    <div class="goal-list">
+      <form action="/detail/<%= id %>/check/<%= val._id %>?_method=PUT" method="POST">
+        <div class="checkBoxDiv">
+          <% let checkMe = val.completed ? "checked" : "" %>
+          <input type="checkbox" class="checkBox form-check-input" onChange="this.form.submit()" <%= checkMe %>>
+          <li class="detailsList"><%= val.goal %> </li>
+        </div>
+      </form>
 
-
-    <ul>
-      
-      <% details.goals.map((val)=>{ %>
-        <div class="goal-list">
-    
-        <!-- action="/detail/<%= id %>/deleteGoal?_method=DELETE" method="POST" -->
-        
-    
-          <form action="/detail/<%= id %>/check/<%= val._id %>?_method=PUT" method="POST">
-            <div class="checkBoxDiv">
-              <% let checkMe = val.completed ? "checked" : "" %>
-    
-              <input type="checkbox" class="checkBox form-check-input" onChange="this.form.submit()"
-              <%= checkMe %>
-              >
-              <li class="detailsList"><%= val.goal %> </li>
-            </div>
-          </form>
-         
-    
-     
       <br>
       <div class="btn-group detalisButtonDiv">
-        <a href="/detail/<%= id %>/edit/<%= val._id %>"> <button type="button" class="btn btn-info detalisButton">Edit Goal</button> </a>
-    
-        <form  action="/detail/<%= id %>/deleteGoal?_method=DELETE" method="POST">
-          <input type="text" name= id value="<%= val._id %>" hidden>
+        <a href="/detail/<%= id %>/edit/<%= val._id %>"> <button type="button" class="btn btn-info detalisButton">
+          Edit Goal
+          </button> 
+        </a>
+
+        <form action="/detail/<%= id %>/deleteGoal?_method=DELETE" method="POST">
+          <input type="text" name=id value="<%= val._id %>" hidden>
           <button type="submit" class="btn btn-danger detalisButton">
-              Delete Goal
+            Delete Goal
           </button>
         </form>
       </div>
-    
-     
       <br>
     </div>
-      <% }); %>
-      
-  
-    </ul>
-    
+    <% }); %>
+  </ul>
 
+  <div>
+    <form action="/detail/<%= details._id %>/addGoal" method="POST">
+      <h1> Add A Goal: </h1>
+      <textarea rows="5" cols="40" type="text" class="form-control checkInTxt" name="goal" required></textarea>
+      <button class="btn btn-primary btn-success" type="submit">
+        Add
+      </button>
+      <a href="/detail/<%= details._id %>/checkIn">
+        <button type="button" class="btn btn-primary checkInBttn">
+          Check In
+        </button>
+      </a>
+    </form>
 
-
-<div class="">
-  <form action="/detail/<%= details._id %>/addGoal" method="POST">
-    <h1> Add A Goal: </h1>
-    <textarea rows="5" cols="40" type="text" class="form-control checkInTxt" name="goal" required></textarea>
-  
-  
-    <button class="btn btn-primary btn-success" type="submit">
-      Add
-  </button>
-  <a href="/detail/<%= details._id %>/checkIn">
-    <button type="button" class="btn btn-primary checkInBttn">
-      Check In
-    </button>
-  </a>
-  </form>
-  
-
-  
 </div>
 
 <% } %>
-
-
-
 <%- include("../partials/footer") -%>
