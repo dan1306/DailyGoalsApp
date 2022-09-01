@@ -3,9 +3,6 @@ var router = express.Router();
 var indexCtrl = require("../controllers/index");
 const passport = require("passport");
 
-/* GET home page. */
-
-// login/signOut
 router.get(
   "/auth/google",
   passport.authenticate("google", {
@@ -13,7 +10,6 @@ router.get(
   })
 );
 
-// After user signs in  with Goggle
 router.get(
   "/oauth2callback",
   passport.authenticate("google", {
