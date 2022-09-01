@@ -6,7 +6,7 @@ var session = require('express-session');
 var passport = require('passport');
 var logger = require("morgan");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 
 // load the env vars
@@ -29,7 +29,7 @@ var detailRouter = require("./routes/details");
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.DATABASE_URL);
+// mongoose.connect(process.env.DATABASE.URL);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
