@@ -29,7 +29,7 @@ var detailRouter = require("./routes/details");
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://127.0.0.1/dailyGoals");
+mongoose.connect(process.env.DATABASE_URL);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
