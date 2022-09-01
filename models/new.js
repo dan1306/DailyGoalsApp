@@ -9,7 +9,6 @@ const checkInSchema = new Schema({
   timestamps: true
 })
 
-
 const newSchema = new Schema({
     title: {
         type: String
