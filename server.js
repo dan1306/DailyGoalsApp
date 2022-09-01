@@ -14,7 +14,7 @@ require('dotenv').config();
 
 var app = express();
 
-const port = 4000
+const port = process.env.PORT || 4000 
 
 // connect to the MongoDB with mongoose
 require('./config/database');
