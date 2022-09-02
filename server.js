@@ -6,7 +6,6 @@ var session = require('express-session');
 var passport = require('passport');
 var logger = require("morgan");
 const bodyParser = require("body-parser");
-// const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 
 // load the env vars
@@ -16,8 +15,9 @@ var app = express();
 
 const port = process.env.PORT || 4000 
 
-// connect to the MongoDB with mongoose
+
 require('./config/database');
+
 // connect to passport module
 require("./config/passport");
 
@@ -28,8 +28,6 @@ var checkInRouter = require("./routes/checkIn");
 var detailRouter = require("./routes/details");
 
 app.use(express.static("public"));
-
-// mongoose.connect(process.env.DATABASE.URL);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
