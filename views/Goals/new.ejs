@@ -2,11 +2,11 @@
 <% if (user) { %>
 
 <div class="newGoal">
-  <h1 class="newGoalTitle">Goal Title:</h1>
+  <h1 class="newGoalTitle">Goal Title(20 Character Count):</h1>
 
   <form action="/new" method="POST">
     <div>
-      <input type="text" name="title" class="form-control" required />
+      <input type="text" name="title" class="form-control" maxlength="20" required />
       <br />
       <br />
       <button class="btn btn-primary btn-success" type="submit">Create</button>

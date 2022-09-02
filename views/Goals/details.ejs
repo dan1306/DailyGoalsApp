@@ -42,8 +42,8 @@
 
   <div>
     <form action="/detail/<%= details._id %>/addGoal" method="POST">
-      <h1> Add A Goal: </h1>
-      <textarea rows="5" cols="40" type="text" class="form-control checkInTxt" name="goal" required></textarea>
+      <h1> Add A Goal(50 Character Count): </h1>
+      <textarea rows="5" cols="40" type="text" class="form-control checkInTxt" name="goal" maxlength="50" required></textarea>
       <button class="btn btn-primary btn-success" type="submit">
         Add
       </button>
